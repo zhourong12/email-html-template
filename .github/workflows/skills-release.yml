@@ -1,0 +1,32 @@
+# 打标签后自动发 GitHub Release，附带 skills zip。
+# 你需要提供：无额外 Secret（使用默认 GITHUB_TOKEN）。
+# 本地发版示例：
+#   git tag skills-v1.0.0
+#   git push origin skills-v1.0.0
+name: Cursor skills Release
+
+on:
+  push:
+    tags:
+      - "skills-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bundle skills
+        run: |
+          cd .cursor/skills
+          zip -r "$GITHUB_WORKSPACE/cursor-skills-${{ github.ref_name }}.zip" .
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          files: cursor-skills-${{ github.ref_name }}.zip
+          generate_release_notes: true
