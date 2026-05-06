@@ -19,7 +19,11 @@
 
 ## 怎么「让 AI 装上」
 
-Skill 不是可执行安装包，而是 **把 `SKILL.md` 放到对应工具约定的目录**，并在对话里 **@ 技能名** 或 **说出触发词**，由宿主根据 `description` 决定是否加载。
+**省事做法**：在 Agent 对话里直接说一句即可，例如：**「请从 https://github.com/zhourong12/email-html-template 安装本仓库里的 email-html-template skill，把 `.cursor/skills/email-html-template` 放到当前项目的 `.cursor/skills/` 下。」** 由 AI 负责克隆或下载并摆好目录；装好后在对话里启用该 skill 或说「按 email-html-template 执行」。
+
+---
+
+Skill 不是可执行安装包，本质仍是 **把 `SKILL.md` 放到对应工具约定的目录**，并在对话里 **@ 技能名** 或 **说出触发词**，由宿主根据 `description` 决定是否加载。下面是手动路径说明（与上面二选一即可）。
 
 ### Cursor
 
