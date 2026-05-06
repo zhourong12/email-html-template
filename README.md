@@ -21,7 +21,7 @@
 
 **省事做法**：在任意支持 Agent 的对话里说明仓库地址，让 AI 代为安装即可，例如：
 
-> **请克隆 `git@github.com:zhourong12/email-html-template.git`，在仓库里找到内含 `SKILL.md` 的 `email-html-template` 目录，按我当前使用的 AI 工具官方文档，安装到正确的 skills 路径（安装后文件夹名仍应为 `email-html-template`）。**
+> **请克隆 `git@github.com:zhourong12/email-html-template.git`，安装一下这个skills**
 
 由 AI 根据你当前环境（Cursor、OpenCode、Claude Code 等）选择正确目录并完成放置；装好后按各产品方式 **启用该 skill**，或在对话中说「按 email-html-template / 邮件 HTML skill 执行」。
 
